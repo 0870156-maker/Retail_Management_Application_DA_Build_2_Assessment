@@ -129,12 +129,43 @@ namespace IT_Assesment_Start
             selectedBook.Author = txtAuthor.Text;
             selectedBook.ReleaseDate = Convert.ToInt32(txtReleaseDate.Text);
             selectedBook.Genre = txtGenre.Text;
-            selectedBook.Price = Convert.ToInt32(txtPrice);
-            selectedBook.Stock = Convert.ToInt32(txtStock);
+            selectedBook.Price = Convert.ToDouble(txtPrice.Text);
+            selectedBook.Stock = Convert.ToInt32(txtStock.Text);
+
+            string title = txtTitle.Text;
+            string author = txtAuthor.Text;
+            string genre = txtGenre.Text;
+            int releaseDate;
+            double price;
+            int stock;
 
             if (txtTitle.Text == "" || txtAuthor.Text == "" || txtGenre.Text == "")
             {
                 MessageBox.Show("No empty boxes!");
+                return;
+            }
+
+            if (!int.TryParse(txtReleaseDate.Text, out releaseDate))
+            {
+                MessageBox.Show("Invalid Release Date");
+                return;
+            }
+
+            if (!double.TryParse(txtPrice.Text, out price))
+            {
+                MessageBox.Show("Invalid price!");
+                return;
+            }
+
+            if (!int.TryParse(txtStock.Text, out stock))
+            {
+                MessageBox.Show("Invalid stock!");
+                return;
+            }
+
+            if (price < 0 || stock < 0)
+            {
+                MessageBox.Show("No negative values!");
                 return;
             }
 
