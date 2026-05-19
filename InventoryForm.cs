@@ -7,17 +7,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace IT_Assesment_Start
 {
     public partial class InventoryForm : Form
     {
+        private void LoadInventory()
+        {
+            if (File.Exists("inventory.csv"))
+            {
+                string[] lines = File.ReadAllLines("inventory.csv");
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+
+                    Book book = new Book(parts[0], parts[1], int.Parse(parts[2]), parts[3], double.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]));
+
+                    inventory.Add(book);
+                }
+            }
+        }
+
+        private void SaveInventory()
+        {
+            List<string> lines = new List<string>();
+
+            foreach (Book book in inventory)
+            {
+                lines.Add($"{book.Title}," + $"{book.Author}," + $"{book.ReleaseDate}," + $"{book.Genre}," + $"{book.Price}," + $"{book.Stock}," + $"{book.CopiesSold}");
+            }
+
+            File.WriteAllLines("inventory.csv", lines);
+        }
+
         List<Book> inventory = new List<Book>();
 
         public InventoryForm()
         {
 
             InitializeComponent();
+
+            dgvInventory.DataSource = inventory;
+
+            LoadInventory();
 
             inventory.Add(new Book("To Kill a Mockingbird", "Lee, Harper", 1960, "Gothic", 19.99, 10, 0));
             inventory.Add(new Book("Frankenstein", "Shelley, Mary", 1818, "Gothic", 24.99, 5, 0));
@@ -73,6 +107,8 @@ namespace IT_Assesment_Start
 
             inventory.Add(newBook);
 
+            SaveInventory();
+
             dgvInventory.DataSource = null;
             dgvInventory.DataSource = inventory;
 
@@ -95,6 +131,8 @@ namespace IT_Assesment_Start
             Book selectedBook = (Book)dgvInventory.CurrentRow.DataBoundItem;
 
             inventory.Remove(selectedBook);
+
+            SaveInventory();
 
             dgvInventory.DataSource = null;
             dgvInventory.DataSource = inventory;
@@ -168,6 +206,8 @@ namespace IT_Assesment_Start
                 MessageBox.Show("No negative values!");
                 return;
             }
+
+            SaveInventory();
 
             dgvInventory.DataSource = null;
             dgvInventory.DataSource = inventory;
