@@ -109,7 +109,7 @@ namespace IT_Assesment_Start
             txtReleaseDate.Clear();
             txtGenre.Clear();
             txtPrice.Clear();
-            txtStock.Clear();
+            txtStock.Clear();            
         }
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
