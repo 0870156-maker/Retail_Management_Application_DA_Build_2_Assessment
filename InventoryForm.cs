@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using static System.Windows.Forms.LinkLabel;
 
 namespace IT_Assesment_Start
 {
@@ -49,21 +50,12 @@ namespace IT_Assesment_Start
 
             InitializeComponent();
 
-            dgvInventory.DataSource = inventory;
-
             LoadInventory();
 
-            inventory.Add(new Book("To Kill a Mockingbird", "Lee, Harper", 1960, "Gothic", 19.99, 10, 0));
-            inventory.Add(new Book("Frankenstein", "Shelley, Mary", 1818, "Gothic", 24.99, 5, 0));
-            inventory.Add(new Book("Dracula", "Stoker, Bram", 1897, "Gothic", 24.99, 5, 0));
-            inventory.Add(new Book("The Raven", "Poe, Edgar Allan", 1845, "Gothic", 24.99, 5, 0));
-            inventory.Add(new Book("Wuthering Heights", "Bronte, Emily", 1847, "Gothic", 50.00, 1, 0));
-
-            dgvInventory.DataSource = null;
             dgvInventory.DataSource = inventory;
         }
 
-        private void btnAddBook_Click(object sender, EventArgs e)
+        private void btnAddBook_Click(object sender, EventArgs e)   
         {
             string title = txtTitle.Text;
             string author = txtAuthor.Text;
@@ -138,26 +130,11 @@ namespace IT_Assesment_Start
             dgvInventory.DataSource = inventory;
         }
 
-        private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvInventory.CurrentRow != null)
-            {
-                Book selectedBook = (Book)dgvInventory.CurrentRow.DataBoundItem;
-
-                txtTitle.Text = selectedBook.Title;
-                txtAuthor.Text = selectedBook.Author;
-                txtReleaseDate.Text = selectedBook.ReleaseDate.ToString();
-                txtGenre.Text = selectedBook.Genre;
-                txtPrice.Text = selectedBook.Price.ToString();
-                txtStock.Text = selectedBook.Stock.ToString();
-            }
-        }
-
         private void btnEditBook_Click(object sender, EventArgs e)
         {
             if (dgvInventory.CurrentRow == null)
             {
-                MessageBox.Show("Select a book first");
+                MessageBox.Show("Nothing selected!");
                 return;
             }
 
@@ -170,47 +147,26 @@ namespace IT_Assesment_Start
             selectedBook.Price = Convert.ToDouble(txtPrice.Text);
             selectedBook.Stock = Convert.ToInt32(txtStock.Text);
 
-            string title = txtTitle.Text;
-            string author = txtAuthor.Text;
-            string genre = txtGenre.Text;
-            int releaseDate;
-            double price;
-            int stock;
-
-            if (txtTitle.Text == "" || txtAuthor.Text == "" || txtGenre.Text == "")
-            {
-                MessageBox.Show("No empty boxes!");
-                return;
-            }
-
-            if (!int.TryParse(txtReleaseDate.Text, out releaseDate))
-            {
-                MessageBox.Show("Invalid Release Date");
-                return;
-            }
-
-            if (!double.TryParse(txtPrice.Text, out price))
-            {
-                MessageBox.Show("Invalid price!");
-                return;
-            }
-
-            if (!int.TryParse(txtStock.Text, out stock))
-            {
-                MessageBox.Show("Invalid stock!");
-                return;
-            }
-
-            if (price < 0 || stock < 0)
-            {
-                MessageBox.Show("No negative values!");
-                return;
-            }
-
             SaveInventory();
 
             dgvInventory.DataSource = null;
             dgvInventory.DataSource = inventory;
         }
-    }
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {              
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            Book selectedBook = (Book)dgvInventory.CurrentRow.DataBoundItem;
+
+            txtTitle.Text = selectedBook.Title;
+            txtAuthor.Text = selectedBook.Author;
+            txtReleaseDate.Text = selectedBook.ReleaseDate.ToString();
+            txtGenre.Text = selectedBook.Genre;
+            txtPrice.Text = selectedBook.Price.ToString();
+            txtStock.Text = selectedBook.Stock.ToString();
+        }
+    }   
 }
