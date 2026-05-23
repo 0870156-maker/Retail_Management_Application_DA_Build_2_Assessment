@@ -16,7 +16,7 @@ namespace IT_Assesment_Start
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryForm());
+            Application.Run(new HomeForm());
         }
     }
 }
