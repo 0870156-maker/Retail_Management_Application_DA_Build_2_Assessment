@@ -43,11 +43,10 @@ namespace IT_Assesment_Start
             File.WriteAllLines("inventory.csv", lines);
         }
 
-        List<Book> inventory = new List<Book>();
+        BindingList<Book> inventory = new BindingList<Book>();
 
         public InventoryForm()
         {
-
             InitializeComponent();
 
             LoadInventory();
@@ -101,9 +100,6 @@ namespace IT_Assesment_Start
 
             SaveInventory();
 
-            dgvInventory.DataSource = null;
-            dgvInventory.DataSource = inventory;
-
             txtTitle.Clear();
             txtAuthor.Clear();
             txtReleaseDate.Clear();
@@ -125,9 +121,6 @@ namespace IT_Assesment_Start
             inventory.Remove(selectedBook);
 
             SaveInventory();
-
-            dgvInventory.DataSource = null;
-            dgvInventory.DataSource = inventory;
         }
 
         private void btnEditBook_Click(object sender, EventArgs e)
@@ -148,9 +141,7 @@ namespace IT_Assesment_Start
             selectedBook.Stock = Convert.ToInt32(txtStock.Text);
 
             SaveInventory();
-
-            dgvInventory.DataSource = null;
-            dgvInventory.DataSource = inventory;
+            dgvInventory.Refresh();
         }
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
