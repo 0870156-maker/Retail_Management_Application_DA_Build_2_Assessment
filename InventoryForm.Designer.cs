@@ -48,6 +48,8 @@
             this.lblInventory = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvInventory.Location = new System.Drawing.Point(9, 190);
-            this.dgvInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInventory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.RowTemplate.Height = 24;
@@ -70,48 +72,48 @@
             // 
             this.txtTitle.AccessibleName = "";
             this.txtTitle.BackColor = System.Drawing.Color.LavenderBlush;
-            this.txtTitle.Location = new System.Drawing.Point(971, 176);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Location = new System.Drawing.Point(1121, 176);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(76, 20);
             this.txtTitle.TabIndex = 1;
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(971, 217);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAuthor.Location = new System.Drawing.Point(1121, 217);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(76, 20);
             this.txtAuthor.TabIndex = 2;
             // 
             // txtGenre
             // 
-            this.txtGenre.Location = new System.Drawing.Point(971, 297);
-            this.txtGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenre.Location = new System.Drawing.Point(1121, 297);
+            this.txtGenre.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(76, 20);
             this.txtGenre.TabIndex = 3;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(971, 345);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Location = new System.Drawing.Point(1121, 345);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(76, 20);
             this.txtPrice.TabIndex = 4;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(971, 398);
-            this.txtStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStock.Location = new System.Drawing.Point(1121, 397);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(76, 20);
             this.txtStock.TabIndex = 5;
             // 
             // txtReleaseDate
             // 
-            this.txtReleaseDate.Location = new System.Drawing.Point(971, 254);
-            this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReleaseDate.Location = new System.Drawing.Point(1121, 254);
+            this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtReleaseDate.Name = "txtReleaseDate";
             this.txtReleaseDate.Size = new System.Drawing.Size(76, 20);
             this.txtReleaseDate.TabIndex = 6;
@@ -119,8 +121,8 @@
             // btnAddBook
             // 
             this.btnAddBook.Font = new System.Drawing.Font("Tempus Sans ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBook.Location = new System.Drawing.Point(807, 452);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBook.Location = new System.Drawing.Point(858, 452);
+            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(89, 79);
             this.btnAddBook.TabIndex = 7;
@@ -132,10 +134,10 @@
             // 
             this.lblTitle.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblTitle.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(805, 170);
+            this.lblTitle.Location = new System.Drawing.Point(917, 170);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(140, 32);
+            this.lblTitle.Size = new System.Drawing.Size(144, 32);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Title:";
             // 
@@ -143,10 +145,10 @@
             // 
             this.lblAuthor.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblAuthor.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(805, 210);
+            this.lblAuthor.Location = new System.Drawing.Point(917, 210);
             this.lblAuthor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(140, 32);
+            this.lblAuthor.Size = new System.Drawing.Size(144, 32);
             this.lblAuthor.TabIndex = 9;
             this.lblAuthor.Text = "Author:";
             // 
@@ -154,10 +156,10 @@
             // 
             this.lblReleaseDate.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblReleaseDate.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReleaseDate.Location = new System.Drawing.Point(803, 249);
+            this.lblReleaseDate.Location = new System.Drawing.Point(917, 249);
             this.lblReleaseDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReleaseDate.Name = "lblReleaseDate";
-            this.lblReleaseDate.Size = new System.Drawing.Size(142, 32);
+            this.lblReleaseDate.Size = new System.Drawing.Size(144, 32);
             this.lblReleaseDate.TabIndex = 10;
             this.lblReleaseDate.Text = "Release Date:";
             // 
@@ -165,7 +167,7 @@
             // 
             this.lblGenre.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblGenre.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(802, 290);
+            this.lblGenre.Location = new System.Drawing.Point(917, 290);
             this.lblGenre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(144, 34);
@@ -176,10 +178,10 @@
             // 
             this.lblPrice.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblPrice.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(802, 335);
+            this.lblPrice.Location = new System.Drawing.Point(917, 335);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(145, 35);
+            this.lblPrice.Size = new System.Drawing.Size(144, 35);
             this.lblPrice.TabIndex = 12;
             this.lblPrice.Text = "Price:";
             // 
@@ -187,18 +189,18 @@
             // 
             this.lblStock.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblStock.Font = new System.Drawing.Font("Tempus Sans ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(802, 388);
+            this.lblStock.Location = new System.Drawing.Point(917, 388);
             this.lblStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(145, 35);
+            this.lblStock.Size = new System.Drawing.Size(144, 35);
             this.lblStock.TabIndex = 13;
             this.lblStock.Text = "Stock:";
             // 
             // btnDeleteBook
             // 
             this.btnDeleteBook.Font = new System.Drawing.Font("Tempus Sans ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteBook.Location = new System.Drawing.Point(1023, 452);
-            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteBook.Location = new System.Drawing.Point(1203, 452);
+            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteBook.Name = "btnDeleteBook";
             this.btnDeleteBook.Size = new System.Drawing.Size(84, 79);
             this.btnDeleteBook.TabIndex = 14;
@@ -209,8 +211,8 @@
             // btnEditBook
             // 
             this.btnEditBook.Font = new System.Drawing.Font("Tempus Sans ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditBook.Location = new System.Drawing.Point(916, 452);
-            this.btnEditBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditBook.Location = new System.Drawing.Point(1031, 452);
+            this.btnEditBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditBook.Name = "btnEditBook";
             this.btnEditBook.Size = new System.Drawing.Size(86, 79);
             this.btnEditBook.TabIndex = 15;
@@ -235,7 +237,7 @@
             this.btnBack.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnBack.Font = new System.Drawing.Font("Tempus Sans ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(98, 50);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 77);
             this.btnBack.TabIndex = 17;
@@ -247,19 +249,41 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 565);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1512, 211);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.LavenderBlush;
+            this.txtSearch.Location = new System.Drawing.Point(132, 163);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 19;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.BackColor = System.Drawing.Color.LavenderBlush;
+            this.lblSearch.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(8, 161);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(100, 23);
+            this.lblSearch.TabIndex = 20;
+            this.lblSearch.Text = "Search";
+            this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
-            this.ClientSize = new System.Drawing.Size(1155, 686);
+            this.ClientSize = new System.Drawing.Size(1345, 844);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblInventory);
@@ -279,7 +303,7 @@
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.dgvInventory);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InventoryForm";
             this.Text = "x";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
@@ -310,5 +334,7 @@
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearch;
     }
 }

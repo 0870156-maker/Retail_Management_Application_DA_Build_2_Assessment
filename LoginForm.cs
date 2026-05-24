@@ -16,6 +16,7 @@ namespace IT_Assesment_Start
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

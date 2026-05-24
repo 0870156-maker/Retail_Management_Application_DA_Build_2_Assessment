@@ -154,5 +154,14 @@ namespace IT_Assesment_Start
             home.Show();
             Close();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.ToLower();
+
+            var filtered = inventory.Where(o => o.Title.ToLower().Contains(searchText) || o.Author.ToLower().Contains(searchText) || o.Genre.ToLower().Contains(searchText)).ToList();
+
+            dgvInventory.DataSource = new BindingList<Book>(filtered);
+        }
     }   
 }

@@ -59,10 +59,10 @@
             this.lblLogin.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblLogin.Font = new System.Drawing.Font("Tempus Sans ITC", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblLogin.Location = new System.Drawing.Point(23, 185);
+            this.lblLogin.Location = new System.Drawing.Point(22, 185);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(514, 78);
+            this.lblLogin.Size = new System.Drawing.Size(1484, 78);
             this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "Login";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,7 +72,7 @@
             this.btnClose.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnClose.Font = new System.Drawing.Font("Tempus Sans ITC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(198, 44);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(104, 88);
             this.btnClose.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.lblPassword.Location = new System.Drawing.Point(22, 349);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(515, 53);
+            this.lblPassword.Size = new System.Drawing.Size(749, 53);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -101,7 +101,7 @@
             this.lblUsername.Location = new System.Drawing.Point(22, 284);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(515, 50);
+            this.lblUsername.Size = new System.Drawing.Size(749, 50);
             this.lblUsername.TabIndex = 4;
             this.lblUsername.Text = "Username:";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,8 +110,8 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtUsername.Location = new System.Drawing.Point(594, 306);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Location = new System.Drawing.Point(820, 306);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(106, 20);
             this.txtUsername.TabIndex = 5;
@@ -119,8 +119,8 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.LavenderBlush;
-            this.txtPassword.Location = new System.Drawing.Point(594, 372);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Location = new System.Drawing.Point(820, 372);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(106, 20);
             this.txtPassword.TabIndex = 6;
@@ -129,8 +129,8 @@
             // 
             this.btnContinue.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnContinue.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.Location = new System.Drawing.Point(229, 424);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContinue.Location = new System.Drawing.Point(340, 424);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(105, 39);
             this.btnContinue.TabIndex = 7;
@@ -143,7 +143,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 478);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1512, 298);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +165,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblBookstoreRetailManager);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
