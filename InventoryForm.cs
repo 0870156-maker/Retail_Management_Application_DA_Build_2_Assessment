@@ -71,7 +71,7 @@ namespace IT_Assesment_Start
                 return;
             }
 
-            if (!int.TryParse(txtStock.Text, out stock))
+            if (!int.TryParse(txtStock.Text, out stock) || stock < 0)
             {
                 MessageBox.Show("Invalid stock!");
                 return;
