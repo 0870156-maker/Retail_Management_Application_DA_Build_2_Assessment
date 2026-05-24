@@ -23,15 +23,15 @@ namespace IT_Assesment_Start
 
             dgvInventory.DataSource = inventory;
             dgvCart.DataSource = cart;
+
+            UpdateTotal();
         }
         private void OrderForm_Load(object sender, EventArgs e)
-        { 
-        
-        }
+        { }
 
         private void UpdateTotal()
         {
-            lblTotal.Text = cart.Sum(cart => cart.Total).ToString("0.00");
+            lblTotal.Text = $"Total: {cart.Sum(item => item.Total):0.00}";
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -63,6 +63,8 @@ namespace IT_Assesment_Start
             dgvInventory.Refresh();
 
             UpdateTotal();
+
+            txtQuantity.Clear();
         }
 
         private void btnRemoveFromCart_Click(object sender, EventArgs e)
@@ -85,10 +87,25 @@ namespace IT_Assesment_Start
                 return;
             }
 
+            foreach (Order order in cart)
+            {
+                order.Book.CopiesSold += order.Quantity;
+            }
+                
+            HomeForm home = (HomeForm)this.Tag;
+            home.SaveInventory();
+            
             cart.Clear();
             UpdateTotal();
 
             MessageBox.Show("Order successful!");
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = (HomeForm)this.Tag;
+            homeForm.Show();
+            Close();
         }
     }
 }

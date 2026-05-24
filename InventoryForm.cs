@@ -14,23 +14,6 @@ namespace IT_Assesment_Start
 {
     public partial class InventoryForm : Form
     {
-        private void LoadInventory()
-        {
-            if (File.Exists("inventory.csv"))
-            {
-                string[] lines = File.ReadAllLines("inventory.csv");
-
-                foreach (string line in lines)
-                {
-                    string[] parts = line.Split(',');
-
-                    Book book = new Book(parts[0], parts[1], int.Parse(parts[2]), parts[3], double.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]));
-
-                    inventory.Add(book);
-                }
-            }
-        }
-
         private void SaveInventory()
         {
             List<string> lines = new List<string>();
@@ -43,13 +26,13 @@ namespace IT_Assesment_Start
             File.WriteAllLines("inventory.csv", lines);
         }
 
-        BindingList<Book> inventory = new BindingList<Book>();
+        BindingList<Book> inventory;
 
-        public InventoryForm()
+        public InventoryForm(BindingList<Book> inventoryList)
         {
             InitializeComponent();
 
-            LoadInventory();
+            inventory = inventoryList;
 
             dgvInventory.DataSource = inventory;
         }
@@ -158,6 +141,13 @@ namespace IT_Assesment_Start
             txtGenre.Text = selectedBook.Genre;
             txtPrice.Text = selectedBook.Price.ToString();
             txtStock.Text = selectedBook.Stock.ToString();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = (HomeForm)this.Tag;
+            homeForm.Show();
+            Close();
         }
     }   
 }
