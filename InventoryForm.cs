@@ -13,6 +13,7 @@ using static System.Windows.Forms.LinkLabel;
 namespace IT_Assesment_Start
 {
     public partial class InventoryForm : Form
+
     {
         private void SaveInventory()
         {
@@ -26,15 +27,20 @@ namespace IT_Assesment_Start
             File.WriteAllLines("inventory.csv", lines);
         }
 
+        private HomeForm home;
+
         BindingList<Book> inventory;
 
-        public InventoryForm(BindingList<Book> inventoryList)
+        public InventoryForm(BindingList<Book> inventoryList, HomeForm homeForm)
         {
             InitializeComponent();
 
             inventory = inventoryList;
+            home = homeForm;
 
             dgvInventory.DataSource = inventory;
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)   
@@ -145,8 +151,7 @@ namespace IT_Assesment_Start
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = (HomeForm)this.Tag;
-            homeForm.Show();
+            home.Show();
             Close();
         }
     }   

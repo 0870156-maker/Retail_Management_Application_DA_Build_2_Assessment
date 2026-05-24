@@ -15,11 +15,12 @@ namespace IT_Assesment_Start
         public LoginForm()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -30,7 +31,6 @@ namespace IT_Assesment_Start
             if (username == "AnjunFeng" && password == "2026")
             {
                 HomeForm homeForm = new HomeForm();
-                homeForm.Tag = this;
                 homeForm.Show();
                 Hide();
             }

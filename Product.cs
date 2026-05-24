@@ -26,5 +26,10 @@ namespace IT_Assesment_Start
             Stock = stock;
             CopiesSold = copiesSold;
         }
+
+        public override String ToString()
+        {
+            return Title;
+        }
     }
 }

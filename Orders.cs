@@ -10,8 +10,6 @@ namespace IT_Assesment_Start
     {
         public Book Book { get; set; }
         public int Quantity { get; set; }
-        public string Title => Book.Title;
-        public double Price => Book.Price;
         public double Total => Book.Price * Quantity;
 
         public Order(Book book, int quantity)

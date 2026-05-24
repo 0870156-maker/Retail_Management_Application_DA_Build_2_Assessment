@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace IT_Assesment_Start
 {
@@ -15,19 +16,45 @@ namespace IT_Assesment_Start
         BindingList<Order> cart = new BindingList<Order>();
         BindingList<Book> inventory;
 
-        public OrderForm(BindingList<Book> inventoryList)
+        private HomeForm home;
+
+        public OrderForm(BindingList<Book> inventoryList, HomeForm homeform)
         {   
             InitializeComponent();
 
             inventory = inventoryList;
+            home = homeform;
 
             dgvInventory.DataSource = inventory;
             dgvCart.DataSource = cart;
 
             UpdateTotal();
+
+            this.WindowState = FormWindowState.Maximized;
         }
         private void OrderForm_Load(object sender, EventArgs e)
-        { }
+        { 
+        
+        }
+
+        private void GenerateReceipt()
+        {
+            List<string> receipt = new List<string>();
+
+            receipt.Add("Receipt:");
+            receipt.Add("");
+
+            foreach (Order order in cart)
+            {
+                receipt.Add($"{order.Book.Title}x{order.Quantity}: {order.Total:0.00}");
+            }
+
+            receipt.Add("");
+            receipt.Add($"Total: ${cart.Sum(item => item.Total):0.00}");
+            receipt.Add($"Date: {DateTime.Now}");
+            string fileName = $"Receipt_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+            File.WriteAllLines(fileName, receipt);
+        }
 
         private void UpdateTotal()
         {
@@ -75,8 +102,10 @@ namespace IT_Assesment_Start
             Order selected = (Order)dgvCart.CurrentRow.DataBoundItem;
 
             cart.Remove(selected);
+            selected.Book.Stock += selected.Quantity;
 
             UpdateTotal();
+            dgvInventory.Refresh();
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
@@ -91,20 +120,24 @@ namespace IT_Assesment_Start
             {
                 order.Book.CopiesSold += order.Quantity;
             }
-                
-            HomeForm home = (HomeForm)this.Tag;
-            home.SaveInventory();
+
+            double saleTotal = cart.Sum(i => i.Total);            
             
+            home.Revenue += saleTotal;
+            home.UpdateRevenueLabel();
+            home.SaveInventory();
+
+            GenerateReceipt();
             cart.Clear();
             UpdateTotal();
+            dgvInventory.Refresh();
 
             MessageBox.Show("Order successful!");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = (HomeForm)this.Tag;
-            homeForm.Show();
+            home.Show();
             Close();
         }
     }

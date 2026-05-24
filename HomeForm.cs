@@ -18,7 +18,9 @@ namespace IT_Assesment_Start
         public HomeForm()
         {
             InitializeComponent();
-            LoadInventory();           
+            LoadInventory();
+            UpdateRevenueLabel(); 
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void LoadInventory()
@@ -59,18 +61,23 @@ namespace IT_Assesment_Start
 
         private void btnVisitInventory_Click(object sender, EventArgs e)
         {
-            InventoryForm inventoryForm = new InventoryForm(inventory);
-            inventoryForm.Tag = this;
+            InventoryForm inventoryForm = new InventoryForm(inventory, this);
             inventoryForm.Show();
             Hide();
         }
 
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
-            OrderForm orderForm = new OrderForm(inventory);
-            orderForm.Tag = this;
+            OrderForm orderForm = new OrderForm(inventory, this);
             orderForm.Show();
             Hide();
+        }
+
+        public double Revenue = 0;
+
+        public void UpdateRevenueLabel()
+        {
+            lblRevenue.Text = $"Revenue: ${Revenue:0.00}";
         }
     }
 }
