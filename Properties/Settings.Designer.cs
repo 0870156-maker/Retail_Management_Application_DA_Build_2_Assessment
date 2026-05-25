@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IT_Assesment_Start.Properties
+namespace IT_Assesment_Start.Properties 
 {
 
 
