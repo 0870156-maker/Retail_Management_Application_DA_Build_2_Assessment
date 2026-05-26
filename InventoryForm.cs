@@ -53,6 +53,8 @@ namespace IT_Assesment_Start
             double price;
             int stock;
 
+            // Input validation,
+
             if (title.Contains(",") || author.Contains(",") || genre.Contains(","))
             {
                 MessageBox.Show("No commas allowed!");

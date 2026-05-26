@@ -23,7 +23,7 @@ namespace IT_Assesment_Start
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void LoadInventory()
+        private void LoadInventory()    // Allows data from CSV file to be transferred into the binding list.
         {
             if (File.Exists("inventory.csv"))
             {
@@ -40,7 +40,7 @@ namespace IT_Assesment_Start
             }
         }
 
-        public void SaveInventory()
+        public void SaveInventory()     // Allows current inventory to be transwerred into the CSV file.
         {
             List<string> lines = new List<string>();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IT_Assesment_Start
 {
-    public class Book
+    public class Book   // Blueprint for books in the inventory, stores data.
     {
         public string Title { get; set; }
         public string Author { get; set; }

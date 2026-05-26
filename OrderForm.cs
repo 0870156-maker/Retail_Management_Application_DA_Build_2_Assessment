@@ -37,7 +37,7 @@ namespace IT_Assesment_Start
         
         }
 
-        private void GenerateReceipt()
+        private void GenerateReceipt()  // Creates external .txt receipt
         {
             List<string> receipt = new List<string>();
 
@@ -121,7 +121,7 @@ namespace IT_Assesment_Start
                 order.Book.CopiesSold += order.Quantity;
             }
 
-            double saleTotal = cart.Sum(i => i.Total);            
+            double saleTotal = cart.Sum(i => i.Total);  // Finds total cost of items in cart using sum.              
             
             home.Revenue += saleTotal;
             home.UpdateRevenueLabel();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IT_Assesment_Start
 {
-    public class Order
+    public class Order  // Blueprint for the creation of orders. 
     {
         public Book Book { get; set; }
         public int Quantity { get; set; }
